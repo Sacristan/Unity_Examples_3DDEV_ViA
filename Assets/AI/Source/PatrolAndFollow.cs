@@ -52,7 +52,7 @@ public class PatrolAndFollow : MonoBehaviour
                 case AIStatus.Patrol:
                     return fieldOfViewAnglePatrol;
                 default:
-                    throw new System.Exception("Unsupported AiStatus: "+aiStatus);
+                    throw new System.Exception("Unsupported AiStatus: " + aiStatus);
             }
         }
     }
@@ -174,7 +174,7 @@ public class PatrolAndFollow : MonoBehaviour
         uint closestIndex = 0;
         float foundMinDistance = float.MaxValue;
 
-        for(uint i=0; i<_waypoints.Length; i++)
+        for (uint i = 0; i < _waypoints.Length; i++)
         {
             Waypoint waypoint = _waypoints[i];
             float dist = Vector3.Distance(transform.position, waypoint.transform.position);
