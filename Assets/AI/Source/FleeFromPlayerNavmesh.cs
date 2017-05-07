@@ -8,18 +8,10 @@ public class FleeFromPlayerNavmesh : MonoBehaviour
 {
     [Range(0f, 50f)]
     [SerializeField]
-    private float movementSpeed = 5f;
-
-    [Range(0f, 50f)]
-    [SerializeField]
     private float safeEnoughDistance = 5f;
-
-    [SerializeField]
-    private bool allowYMovement = false;
 
     private GameObject _player;
     private NavMeshAgent _navMeshAgent;
-
 
     void Start()
     {
