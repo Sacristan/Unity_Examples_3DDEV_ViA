@@ -60,6 +60,9 @@ public class MultiplayerPlayer : NetworkBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnTransform.position, bulletSpawnTransform.rotation) as GameObject;
 
+        BulletBehaviour bulletBehaviour = bullet.GetComponent<BulletBehaviour>();
+        bulletBehaviour.Origin = gameObject;
+
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = bullet.transform.forward * 100f;
 

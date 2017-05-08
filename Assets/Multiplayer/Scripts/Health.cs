@@ -28,6 +28,5 @@ public class Health : NetworkBehaviour
         healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
 
         if (currentHealth <= 0) Destroy(gameObject);
-
     }
 }

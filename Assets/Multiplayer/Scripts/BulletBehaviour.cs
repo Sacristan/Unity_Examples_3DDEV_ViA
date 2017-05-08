@@ -3,16 +3,24 @@ using System.Collections;
 
 public class BulletBehaviour : MonoBehaviour
 {
+    public GameObject Origin { get; set; }
+
     void OnCollisionEnter(Collision collision)
     {
-        var hit = collision.gameObject;
-        var health = hit.GetComponent<Health>();
+        GameObject hit = collision.gameObject;
 
-        if (health != null)
+        if (hit.tag == "Player")
         {
-            health.TakeDamage(10);
-        }
+            if (hit == Origin) return;
 
-        Destroy(gameObject);
+            Health health = hit.GetComponent<Health>();
+
+            if (health != null)
+            {
+                health.TakeDamage(10);
+            }
+
+            Destroy(gameObject);
+        }
     }
 }
