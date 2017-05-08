@@ -75,6 +75,8 @@ public class MultiplayerPlayer : NetworkBehaviour
         if (isLocalPlayer)
         {
             playerCamera.gameObject.SetActive(true);
+
+            ClientGameManager.Instance.PlayerHudCanvas.gameObject.SetActive(true);
         }
     }
 

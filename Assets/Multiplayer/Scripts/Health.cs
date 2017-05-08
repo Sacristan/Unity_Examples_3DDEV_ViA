@@ -10,7 +10,12 @@ public class Health : NetworkBehaviour
     [SyncVar]
     private int currentHealth = maxHealth;
 
-    public RectTransform healthBar;
+    private RectTransform healthBar;
+
+    private void Start()
+    {
+        healthBar = ClientGameManager.Instance.HealthBar;
+    }
 
     public void TakeDamage(int amount)
     {
