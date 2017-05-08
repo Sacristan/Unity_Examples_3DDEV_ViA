@@ -18,20 +18,41 @@ public class MultiplayerPlayer : NetworkBehaviour
     [SerializeField]
     private Camera playerCamera;
 
-    [SyncVar]
+    [SyncVar(hook = "OnColor")]
     private Color playerColor;
 
     private void Update()
     {
         if (!isLocalPlayer) return;
 
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed;
+        float x = Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed;
+        float z = Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed;
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
 
         if (Input.GetKeyDown(KeyCode.Space)) CmdFire();
+    }
+
+    public void GenerateColor()
+    {
+        playerColor = new Color(Random.value, Random.value, Random.value);
+    }
+
+    private void OnColor(Color newColor)
+    {
+        playerColor = newColor;
+        UpdateColor();
+    }
+
+    private void UpdateColor()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            renderers[i].material.color = playerColor;
+        }
     }
 
     [Command]
@@ -49,8 +70,16 @@ public class MultiplayerPlayer : NetworkBehaviour
 
     public override void OnStartLocalPlayer()
     {
-        if (isLocalPlayer) playerCamera.gameObject.SetActive(true);
-        playerColor = new Color(Random.value, Random.value, Random.value);
-        GetComponent<Renderer>().material.color = playerColor;
+        base.OnStartLocalPlayer();
+
+        if (isLocalPlayer)
+        {
+            playerCamera.gameObject.SetActive(true);
+        }
+    }
+
+    public override void OnStartClient()
+    {
+        UpdateColor();
     }
 }
