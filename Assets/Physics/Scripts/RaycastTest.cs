@@ -3,27 +3,23 @@ using System.Collections;
 
 public class RaycastTest : MonoBehaviour
 {
-    void Update()
+    private void Update()
     {
         RaycastHit hit;
         
-        Vector3 source = transform.position;
-        Vector3 target = transform.forward;
+        Vector3 originPoint = transform.position + Vector3.up * 1.7f; //object position + approximate head height (0,1.7,0) 
 
-        Vector3 debugTarget;
+        Vector3 rayDirectionVector = transform.forward;
 
-        if (Physics.Raycast(source, target, out hit))
+        if (Physics.Raycast(originPoint, rayDirectionVector, out hit))
         {
-            debugTarget = hit.point;
-            print("There is an obstacle in front of me!");
+            Debug.Log("There is an obstacle in front of me!");
+            Debug.DrawLine(originPoint, hit.point, Color.blue);
         }
         else
         {
-            debugTarget = target;
-            print("There is no obstacle ahead of me!");
+            Debug.Log("There is no obstacle ahead of me!");
+            Debug.DrawRay(originPoint, rayDirectionVector, Color.red);
         }
-
-        Debug.DrawLine(source, debugTarget, Color.blue);
-            
     }
 }
