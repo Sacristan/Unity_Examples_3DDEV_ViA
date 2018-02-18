@@ -23,6 +23,9 @@ public class FirstPersonController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        pitch = transform.root.eulerAngles.x;
+        yaw = transform.rotation.eulerAngles.y;
     }
 
     private void Update()
