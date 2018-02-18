@@ -2,15 +2,16 @@
 
 public class FirstPersonController : MonoBehaviour
 {
-    const float PitchLimit = 89;
+    private const float PitchLimit = 89;
+    private const float RotationSpeed = 100f;
 
-    private float movementSpeed = 50f;
-    private float rotationSpeed = 100f;
-
-    private CharacterController _characterController;
+    [SerializeField]
+    private float movementSpeed = 25f;
 
     [SerializeField]
     private float mouseSensitivity = 1.5f;
+
+    private CharacterController _characterController;
 
     private float pitch;
     private float yaw;
@@ -22,10 +23,10 @@ public class FirstPersonController : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-
         pitch = transform.root.eulerAngles.x;
         yaw = transform.rotation.eulerAngles.y;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -33,20 +34,24 @@ public class FirstPersonController : MonoBehaviour
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
 
-        yaw += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed * mouseSensitivity;
-        pitch -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed * mouseSensitivity;
+        yaw += Input.GetAxis("Mouse X") * Time.deltaTime * RotationSpeed * mouseSensitivity;
+        pitch -= Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSpeed * mouseSensitivity;
 
         if (pitch > PitchLimit) pitch = PitchLimit;
         if (pitch < -PitchLimit) pitch = -PitchLimit;
 
         Vector3 movementVector = new Vector3(
             hInput,
-            Physics.gravity.y,
+            0f,
             vInput
         );
 
+        movementVector *= movementSpeed;
+        movementVector.y = Physics.gravity.y;
+
         movementVector = Quaternion.Euler(Vector3.up * yaw) * movementVector;
-        movementVector *= Time.deltaTime * movementSpeed;
+
+        movementVector *= Time.deltaTime;
 
         Rotate();
         Move(movementVector);
