@@ -11,9 +11,6 @@ public class Shooter : MonoBehaviour {
 	private Transform spawnTransform;
 
 	[SerializeField]
-	private float bulletForce = 1f;
-
-	[SerializeField]
 	private int fireFrameRate = 5;
 
 	[SerializeField]

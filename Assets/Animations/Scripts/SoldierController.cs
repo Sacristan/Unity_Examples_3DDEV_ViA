@@ -9,12 +9,9 @@ public class SoldierController : MonoBehaviour {
 
 	private Transform _playerTransform;
 
-	private CharacterController _characterController;
-
     private IEnumerator Start()
     {
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        _characterController = GetComponent<CharacterController>();
 
         yield return new WaitForSeconds(2f);
 
