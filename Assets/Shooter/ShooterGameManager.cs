@@ -25,5 +25,11 @@ public class ShooterGameManager : MonoBehaviour {
 	{
 		instance = this;	
 	}
+
+    public static void ApplyDamageToPlayer(int damage)
+    {
+        IDamageable damageAbleInterface = Player.GetComponent<IDamageable>();
+        if(damageAbleInterface!=null) damageAbleInterface.ApplyDamage(damage);
+    }
 	
 }

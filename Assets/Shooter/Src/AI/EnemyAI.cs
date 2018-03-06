@@ -2,8 +2,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyAI : MonoBehaviour, IDamageable
 {
+    private const string DeadAnimationParameter = "Dead";
+    private const string AttackingAnimationParameter = "IsAttacking";
+
     private enum State
     {
         Chasing,
@@ -11,9 +15,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
         Dead
     }
 
-    [SerializeField] private float closeEnoughDistance;
+    [SerializeField] private float closeEnoughDistance = 1f;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private float damageInterval = 0.5f;
+    [SerializeField] private int hitDamage = 5;
 
     private Animator _animator;
     private NavMeshAgent _navmeshAgent;
@@ -87,7 +92,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
                 if (Time.realtimeSinceStartup - lastHitTime > damageInterval)
                 {
-                    ShooterGameManager.Player.SendMessage("ApplyDamage", 15);
+                    ShooterGameManager.ApplyDamageToPlayer(hitDamage);
                     ResetHitTime();
                 }
 
@@ -102,7 +107,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     private void StartedDeath()
     {
         StopMovement();
-        _animator.SetTrigger("Dead");
+        _animator.SetTrigger(DeadAnimationParameter);
     }
 
     private void StartedChasing()
@@ -125,7 +130,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
     private void SetAttackingAnimation(bool flag)
     {
-        _animator.SetBool("IsAttacking", flag);
+        _animator.SetBool(AttackingAnimationParameter, flag);
     }
 
     private void UpdateNavigation()
