@@ -33,5 +33,7 @@ public class BulletShooter : MonoBehaviour
         {
             damageable.ApplyDamage(damage);
         }
+
+        Destroy(this);
     }
 }
