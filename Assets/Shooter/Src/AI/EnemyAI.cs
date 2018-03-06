@@ -69,19 +69,17 @@ public class EnemyAI : MonoBehaviour, IDamageable
             Ticker();
             yield return null;
         }
-
     }
 
     private void Ticker()
     {
-        if (health <= 0)
+        if (currentState != State.Dead && health <= 0)
         {
             Die();
             return;
         }
 
         targetPos = ShooterGameManager.Player.transform.position;
-        UpdateNavigation();
 
         bool isCloseEnough = Vector3.Distance(transform.position, targetPos) <= closeEnoughDistance;
 
@@ -99,10 +97,10 @@ public class EnemyAI : MonoBehaviour, IDamageable
                 break;
             case State.Chasing:
                 if (isCloseEnough) currentState = State.Attacking;
+                UpdateNavigation();
                 break;
         }
     }
-
 
     private void StartedDeath()
     {
@@ -152,6 +150,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
     public void Die()
     {
         currentState = State.Dead;
+        ShooterGameManager.EnemyDied(this);
         Destroy(gameObject, 3f);
     }
 }

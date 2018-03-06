@@ -14,7 +14,9 @@ public class ShooterHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        Debug.Log("GAMEOVER");
+        Debug.Break();
+
         //Lets finish this once UI is done
-        throw new System.NotImplementedException();
     }
 }
