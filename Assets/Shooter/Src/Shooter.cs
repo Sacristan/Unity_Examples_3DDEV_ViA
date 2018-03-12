@@ -22,6 +22,9 @@ public class Shooter : MonoBehaviour {
 	[SerializeField]
 	private float recoilRecoveryTimeInSeconds = 1.5f;
 
+	[SerializeField]
+	private CrosshairController crosshairController;
+
 	private float recoil;
 
 	private void Update () {
@@ -42,6 +45,7 @@ public class Shooter : MonoBehaviour {
 			recoil = -recoilForce;
 
 			Instantiate (bulletPrefab, spawnTransform.position, spawnTransform.rotation);
+			crosshairController.TriggerFX ();
 		}
 	}
 }
