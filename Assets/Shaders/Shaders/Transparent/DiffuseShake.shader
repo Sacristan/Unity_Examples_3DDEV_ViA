@@ -17,8 +17,8 @@ Shader "Custom/Transparent/Cutout/Diffuse Shake" {
 		LOD 200
 
 		CGPROGRAM
-#pragma target 3.0
-#pragma surface surf Lambert alphatest:_Cutoff vertex:vert addshadow
+	#pragma target 3.0
+	#pragma surface surf Lambert alphatest:_Cutoff vertex:vert addshadow
 
 		sampler2D _MainTex;
 	fixed4 _Color;
