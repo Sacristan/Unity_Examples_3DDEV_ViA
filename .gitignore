@@ -3,6 +3,7 @@ App/
 [Tt]emp/
 [Bb]uild/
 UWP/
+[Oo]bj/
 
 *.csproj
 *.unityproj
