@@ -6,6 +6,6 @@ public class ReceiverSignalSerializedReference : MonoBehaviour
 {
     public void LaunchEvent()
     {
-    	Debug.Log("ReceiverSignalSerializedReference Reveived EVENT!");
+    	Debug.Log("ReceiverSignalSerializedReference Received EVENT!");
     }
 }
