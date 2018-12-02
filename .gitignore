@@ -13,6 +13,8 @@ UWP/
 *.userprefs
 *.pidb
 *.booproj
+.vs
+.vscode
 
 sysinfo.txt
 Build.meta
