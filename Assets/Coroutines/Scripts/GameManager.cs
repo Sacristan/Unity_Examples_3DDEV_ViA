@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private States currentState;
 
+    [SerializeField] private float colorInterpolationTime = 3f;
+
     private States lastKnownState = States.Unknown;
 
     private void Start()
@@ -29,6 +31,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Scaling cube up...");
         yield return DoubleTheSize(); //Waiting until Enumerator DoubleTheSize returns
+
+        yield return new WaitForSeconds(2f); // wait for one second
+
+
         Debug.Log("Changing cube color");
         yield return ChangeToColor(Color.blue); //Waiting until Change color done
         Debug.Log("CubeBehaviour done!");
@@ -49,7 +55,7 @@ public class GameManager : MonoBehaviour
 
         while (t < 1f) //while time is not over or equal to 1f (100%)
         {
-            t += Time.deltaTime; // increase percentage by 1/fps
+            t += Time.deltaTime / colorInterpolationTime; // increase percentage by 1/fps
 
             Color newColor = Color.Lerp(originalColor, targetColor, t); //Interpolate linearly between original color and target color using T as percentage
             renderer.material.color = newColor; // set new color

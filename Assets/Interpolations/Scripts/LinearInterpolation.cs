@@ -15,15 +15,31 @@ public class LinearInterpolation : MonoBehaviour
 
     private IEnumerator Start()
     {
+        while(true){
+            MyUpdate();
+            yield return null;
+            MyLateUpdate();
+
+        }
+    }
+
+private void MyUpdate(){
+
+}
+
+private void MyLateUpdate(){
+    
+}
+
+    private IEnumerator MoveRoutine(){
         float t = 0f;
 
-        while(t < 1f)
+        while(true)
         {
             transform.position = Vector3.Lerp(startTransform.position, endTransform.position, t);
             t += Time.deltaTime / movementTimeInSeconds;
-            yield return null;
+            yield return new WaitForSeconds(50f);
         }
-
     }
 
 }
