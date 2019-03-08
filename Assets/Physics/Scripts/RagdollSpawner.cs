@@ -50,7 +50,26 @@ public class RagdollSpawner : MonoBehaviour
 
         if (allowToDestroyRagdolls)
         {
-            Destroy(spawnedRagdollInstance, ragdollInstanceDestroyTimeInSeconds);
+            StartCoroutine(KillRoutine(spawnedRagdollInstance));
         }
     }
+
+
+    private IEnumerator KillRoutine(GameObject killObject){
+        yield return new WaitForSeconds(ragdollInstanceDestroyTimeInSeconds);
+
+        Collider[] ragdollColliders = killObject.GetComponentsInChildren<Collider>();
+
+        for(int i = 0; i < ragdollColliders.Length; i++)
+        {
+            Collider collider = ragdollColliders[i];
+            collider.enabled = false;
+        }
+
+        // yield return new WaitForSeconds(1);
+        // Destroy(killObject);
+        Destroy(killObject, 1f);
+
+    }
+
 }

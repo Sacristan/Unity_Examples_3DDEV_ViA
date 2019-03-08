@@ -5,6 +5,7 @@ App/
 UWP/
 [Oo]bj/
 
+.DS_Store
 *.csproj
 *.unityproj
 *.sln
