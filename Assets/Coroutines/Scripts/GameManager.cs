@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
         WatchingAtBirds,
         WalkingAwkwardly
     }
+    
     [SerializeField]
     private GameObject cube;
 

@@ -48,7 +48,7 @@ public class FirstPersonController : MonoBehaviour
         movementVector *= movementSpeed;
         movementVector.y = Physics.gravity.y;
 
-        movementVector = Quaternion.Euler(Vector3.up * yaw) * movementVector;
+        movementVector = Quaternion.Euler(Vector3.up * yaw) * movementVector; //converts global movementVector to local vector
 
         movementVector *= Time.deltaTime;
 

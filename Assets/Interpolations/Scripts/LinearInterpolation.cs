@@ -13,32 +13,20 @@ public class LinearInterpolation : MonoBehaviour
     [SerializeField]
     private float movementTimeInSeconds = 5f;
 
-    private IEnumerator Start()
+    private void Start()
     {
-        while(true){
-            MyUpdate();
-            yield return null;
-            MyLateUpdate();
-
-        }
+        StartCoroutine(MoveRoutine());
     }
 
-private void MyUpdate(){
-
-}
-
-private void MyLateUpdate(){
-    
-}
-
-    private IEnumerator MoveRoutine(){
+    private IEnumerator MoveRoutine()
+    {
         float t = 0f;
 
-        while(true)
+        while (true)
         {
-            transform.position = Vector3.Lerp(startTransform.position, endTransform.position, t);
             t += Time.deltaTime / movementTimeInSeconds;
-            yield return new WaitForSeconds(50f);
+            transform.position = Vector3.Lerp(startTransform.position, endTransform.position, t);
+            yield return null;
         }
     }
 

@@ -10,6 +10,7 @@ public class SenderSignalSendMessage : MonoBehaviour
         Debug.Log("SenderSignalSendMessage Waiting for 1 second...");
         yield return new WaitForSeconds(1f);
         Debug.Log("SenderSignalSendMessage Sending event...");
+
         GameObject.Find("Receiver").SendMessage("LaunchEvent");
     }
 
