@@ -17,12 +17,12 @@ public class UI_ObjectSelection : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-		_renderer.material.color = selectedColor;
+        _renderer.material.color = selectedColor;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-		_renderer.material.color = unselectedColor;
+        _renderer.material.color = unselectedColor;
     }
 
     public void OnPointerClick(PointerEventData eventData)
