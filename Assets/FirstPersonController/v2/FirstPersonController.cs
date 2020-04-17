@@ -6,6 +6,8 @@ namespace VIA.FPC.v2
 {
     public class FirstPersonController : MonoBehaviour
     {
+        const byte MaxPitch = 90;
+
         [SerializeField] float movementSpeed = 10f;
         [SerializeField] float rotationSpeed = 5f;
 
@@ -37,6 +39,8 @@ namespace VIA.FPC.v2
 
             jaw += hMouse * Time.deltaTime * rotationSpeed; // X Axis
             pitch -= vMouse * Time.deltaTime * rotationSpeed; //Y Axis
+
+            pitch = Mathf.Clamp(pitch, -MaxPitch, MaxPitch);
 
             Vector3 input = new Vector3(hKeyboard, 0, vKeyboard);
 
