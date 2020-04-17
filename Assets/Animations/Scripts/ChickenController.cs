@@ -32,7 +32,7 @@ public class ChickenController : MonoBehaviour
 
 	private IEnumerator HeadBangRoutine()
 	{
-		yield return new WaitForSeconds (HeadBangingTimeInSeconds);
+		yield return new WaitForSeconds (31f);
 		_animator.SetBool ("IsHeadBanging",true);
 	}
 
