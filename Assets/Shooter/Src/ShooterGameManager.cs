@@ -3,11 +3,6 @@ using UnityEngine.AI;
 
 public class ShooterGameManager : MonoBehaviour
 {
-	public delegate void EventHandler();
-	public delegate void PlayerDamageEventHandler(int health);
-	public static event EventHandler OnPlayerDied;
-	public static event PlayerDamageEventHandler OnPlayerReceivedDamage;
-
     [System.Serializable]
     private class EnemySpawner
     {
@@ -55,13 +50,18 @@ public class ShooterGameManager : MonoBehaviour
 
     }
 
+    public delegate void EventHandler();
+    public delegate void PlayerDamageEventHandler(int health);
+    public static event EventHandler OnPlayerDied;
+    public static event PlayerDamageEventHandler OnPlayerReceivedDamage;
+
     private static ShooterGameManager instance;
 
     private GameObject _player;
 
     [SerializeField] private EnemySpawner[] enemySpawners;
 
-	public static GameObject Player
+    public static GameObject Player
     {
         get
         {
@@ -82,10 +82,10 @@ public class ShooterGameManager : MonoBehaviour
 
     private void Start()
     {
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
-		OnPlayerDied += ShooterGameManager_OnPlayerDied;
+        OnPlayerDied += ShooterGameManager_OnPlayerDied;
 
         for (int i = 0; i < enemySpawners.Length; i++)
         {
@@ -93,16 +93,16 @@ public class ShooterGameManager : MonoBehaviour
         }
     }
 
-    void ShooterGameManager_OnPlayerDied ()
+    void ShooterGameManager_OnPlayerDied()
     {
-		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
-		FirstPersonController controller = _player.GetComponent<FirstPersonController> ();
-		Shooter shooter = _player.GetComponent<Shooter> ();
+        FirstPersonController controller = _player.GetComponent<FirstPersonController>();
+        Shooter shooter = _player.GetComponent<Shooter>();
 
-		if(controller!=null) controller.enabled = false;
-		if(shooter!=null) shooter.enabled = false;
+        if (controller != null) controller.enabled = false;
+        if (shooter != null) shooter.enabled = false;
     }
 
     public static void EnemyDied(EnemyAI enemyDied)
@@ -126,16 +126,17 @@ public class ShooterGameManager : MonoBehaviour
         if (damageAbleInterface != null) damageAbleInterface.ApplyDamage(damage);
     }
 
-	public static void PlayerReceivedDamage(int currentHealth){
-	
-		if (OnPlayerReceivedDamage != null)
-			OnPlayerReceivedDamage.Invoke (currentHealth);
-	}
+    public static void PlayerReceivedDamage(int currentHealth)
+    {
 
-	public static void PlayerDied()
-	{
-		if (OnPlayerDied != null)
-			OnPlayerDied.Invoke ();
-	}
+        if (OnPlayerReceivedDamage != null)
+            OnPlayerReceivedDamage.Invoke(currentHealth);
+    }
+
+    public static void PlayerDied()
+    {
+        if (OnPlayerDied != null)
+            OnPlayerDied.Invoke();
+    }
 
 }

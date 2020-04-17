@@ -30,8 +30,8 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        float hInput = Input.GetAxis("Horizontal");
-        float vInput = Input.GetAxis("Vertical");
+        float hInput = Input.GetAxis("Horizontal"); //0f
+        float vInput = Input.GetAxis("Vertical"); //0f
 
         yaw += Input.GetAxis("Mouse X") * Time.deltaTime * RotationSpeed * mouseSensitivity;
         pitch -= Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSpeed * mouseSensitivity;
