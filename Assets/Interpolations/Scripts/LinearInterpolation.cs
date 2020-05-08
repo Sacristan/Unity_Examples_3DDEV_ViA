@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class LinearInterpolation : MonoBehaviour
 {
-    [SerializeField]
-    private Transform startTransform;
+    [SerializeField] private Transform startTransform;
 
-    [SerializeField]
-    private Transform endTransform;
+    [SerializeField] private Transform endTransform;
 
-    [SerializeField]
-    private float movementTimeInSeconds = 5f;
+    [SerializeField] private float movementTimeInSeconds = 5f;
 
     private void Start()
     {
