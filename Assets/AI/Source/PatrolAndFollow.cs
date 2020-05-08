@@ -6,56 +6,63 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PatrolAndFollow : MonoBehaviour
 {
-    private enum AIStatus { Patrol, Follow }
+    private enum AIStatus { None, Patrol, Follow }
 
-    private const float CloseEnoughWaypointDistance = 0.5f;
+    [Range(0f, 1f)] [SerializeField] private float closeEnoughDistance = 0.3f;
+    [Range(1f, 100f)] [SerializeField] private float maxSightDistance = 30f;
+    [Range(1f, 360f)] [SerializeField] private float fieldOfViewAnglePatrol = 30f;
+    [Range(1f, 360f)] [SerializeField] private float fieldOfViewAngleFollow = 180f;
+    [Range(0f, 30f)] [SerializeField] private float loseInterestTime = 5f;
+    [Range(0f, 30f)] [SerializeField] private float waypointIdleTime = 3f;
 
-    [Range(0f, 1f)]
-    [SerializeField]
-    private float closeEnoughFollowDistance = 0.5f;
+    [SerializeField] Transform sightOrigin;
+    [SerializeField] LayerMask sightLayerMask = ~0;
 
-    [Range(1f, 100f)]
-    [SerializeField]
-    private float maxSightDistance = 10f;
-
-    [Range(1f, 360f)]
-    [SerializeField]
-    private float fieldOfViewAnglePatrol = 30f;
-
-    [Range(1f, 360f)]
-    [SerializeField]
-    private float fieldOfViewAngleFollow = 180f;
-
-    [Range(0f, 30f)]
-    [SerializeField]
-    private float loseInterestTime = 5f;
-
-    private AIStatus aiStatus = AIStatus.Patrol;
+    private AIStatus aiStatus = AIStatus.None;
 
     private GameObject _player;
     private NavMeshAgent _navMeshAgent;
     private Waypoint[] _waypoints;
+    Animator _animator;
 
     private uint currentWaypointIndex = 0;
     private Vector3 destinationPosition;
     private float distanceToDestination;
     private float accumulatedLoseInterestRate = 0f;
 
+    private Coroutine currentStateRoutine;
+
+    private AIStatus CurrentAIStatus
+    {
+        get => aiStatus;
+
+        set
+        {
+            if (aiStatus != value)
+            {
+                aiStatus = value;
+                UpdateStatus();
+            }
+        }
+    }
+
     private float FieldOfViewAngle
     {
         get
         {
-            switch (aiStatus)
+            switch (CurrentAIStatus)
             {
                 case AIStatus.Follow:
                     return fieldOfViewAngleFollow;
                 case AIStatus.Patrol:
                     return fieldOfViewAnglePatrol;
                 default:
-                    throw new System.Exception("Unsupported AiStatus: " + aiStatus);
+                    throw new System.Exception("Unsupported AiStatus: " + CurrentAIStatus);
             }
         }
     }
+
+    public Vector3 PlayerPosForRaycast => _player.transform.position + Vector3.up * 0.5f;
 
     private void Start()
     {
@@ -63,24 +70,35 @@ public class PatrolAndFollow : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _waypoints = FindObjectsOfType<Waypoint>();
 
-        UpdateTargetWaypointDestination();
-        UpdateNavMeshAgentDestinationPosition();
+        _animator = GetComponentInChildren<Animator>();
+
+        CurrentAIStatus = AIStatus.Patrol;
+
+        StartCoroutine(SightRoutine());
     }
 
-    private void Update()
+    private void UpdateStatus()
     {
-        distanceToDestination = Vector3.Distance(transform.position, destinationPosition);
+        Debug.Log("STATUS changed to: " + CurrentAIStatus);
 
-        switch (aiStatus)
+        SetWalk(true);
+
+
+        if (currentStateRoutine != null) StopCoroutine(currentStateRoutine);
+
+        switch (CurrentAIStatus)
         {
             case AIStatus.Patrol:
-                PerformPatrol();
+                UpdateTargetWaypointDestination();
+                UpdateNavMeshAgentDestinationPosition();
+                currentStateRoutine = StartCoroutine(PatrolRoutine());
                 break;
             case AIStatus.Follow:
-                PerformFollow();
+
+                currentStateRoutine = StartCoroutine(FollowRoutine());
+
                 break;
         }
-
     }
 
     /// <summary>
@@ -89,77 +107,82 @@ public class PatrolAndFollow : MonoBehaviour
     /// <returns></returns>
     private bool CanSeePlayer()
     {
-        RaycastHit hit;
-        Vector3 direction = _player.transform.position - transform.position;
+        Vector3 direction = PlayerPosForRaycast - sightOrigin.position;
 
         //Check if raycast can hit player (no obstacles in between)
-        if (Physics.Raycast(transform.position, direction, out hit, maxSightDistance))
+        if (Physics.Raycast(sightOrigin.position, direction, out RaycastHit hit, maxSightDistance, sightLayerMask))
         {
+            // Debug.Log(hit.transform.name);
             if (hit.transform.tag == "Player") //check if other object tag is Player to avoid conflicts with scene geometry
             {
-                //Check if direction is within FOV angle
-                if ((Vector3.Angle(direction, transform.forward)) <= FieldOfViewAngle) return true;
+                if ((Vector3.Angle(direction, sightOrigin.forward)) <= FieldOfViewAngle) return true;
             }
         }
 
         return false;
     }
 
-    /// <summary>
-    /// Follow Player. If not player not seen - move to last known pos
-    /// </summary>
-    private void PerformFollow()
+    private IEnumerator SightRoutine()
     {
-        bool canSeePlayer = CanSeePlayer();
-        bool closeEnoughToDestination = distanceToDestination <= closeEnoughFollowDistance;
+        YieldInstruction waitInstruction = new WaitForSeconds(0.1f);
 
-        if (canSeePlayer)
+        while (true)
         {
-            //Can see player - update position
-
-            destinationPosition = _player.transform.position;
-            UpdateNavMeshAgentDestinationPosition();
-
-            accumulatedLoseInterestRate = 0f;
+            CalcDistance();
+            if (CurrentAIStatus == AIStatus.Patrol && CanSeePlayer()) CurrentAIStatus = AIStatus.Follow;
+            yield return waitInstruction;
         }
-        else
+    }
+
+    private IEnumerator FollowRoutine()
+    {
+        while (true)
         {
-            if (closeEnoughToDestination)
+            bool canSeePlayer = CanSeePlayer();
+            bool closeEnoughToDestination = distanceToDestination <= closeEnoughDistance;
+
+            if (canSeePlayer)
             {
-                accumulatedLoseInterestRate += Time.deltaTime;
-                if (accumulatedLoseInterestRate >= loseInterestTime) ResumePatrolling();
+                //Can see player - update position
+                if (!closeEnoughToDestination)
+                {
+                    destinationPosition = _player.transform.position;
+                    UpdateNavMeshAgentDestinationPosition();
+                }
+
+                accumulatedLoseInterestRate = 0f;
             }
+            else
+            {
+                if (closeEnoughToDestination)
+                {
+                    accumulatedLoseInterestRate += Time.deltaTime;
+                    if (accumulatedLoseInterestRate >= loseInterestTime) CurrentAIStatus = AIStatus.Patrol;
+                }
+            }
+
+
+            yield return null;
         }
     }
 
-    /// <summary>
-    /// Perform patrolling between points
-    /// </summary>
-    private void PerformPatrol()
+    private IEnumerator PatrolRoutine()
     {
-        //If player has been seen while patrolling - start to follow
-        if (CanSeePlayer()) StartFollowing();
-
-        if (distanceToDestination <= CloseEnoughWaypointDistance)
+        while (true)
         {
-            MoveNextWaypoint();
-            UpdateTargetWaypointDestination();
-            UpdateNavMeshAgentDestinationPosition();
+            if (distanceToDestination <= closeEnoughDistance)
+            {
+                SetWalk(false);
+                yield return new WaitForSeconds(waypointIdleTime);
+                SetWalk(true);
+
+                MoveNextWaypoint();
+                UpdateTargetWaypointDestination();
+                UpdateNavMeshAgentDestinationPosition();
+            }
+
+            yield return null;
         }
-    }
-
-    private void StartFollowing()
-    {
-        Debug.Log("Spotted player while patrolling! Commence follow!");
-        aiStatus = AIStatus.Follow;
-    }
-
-    private void ResumePatrolling()
-    {
-        Debug.Log("AI lost interest - resuming patrol");
-        aiStatus = AIStatus.Patrol;
-        FindClosestWaypoint();
-        UpdateNavMeshAgentDestinationPosition();
     }
 
     private void UpdateNavMeshAgentDestinationPosition()
@@ -200,5 +223,21 @@ public class PatrolAndFollow : MonoBehaviour
         destinationPosition = waypoint.transform.position;
     }
     #endregion
+
+    private void CalcDistance()
+    {
+        Vector3 a = transform.position;
+        Vector3 b = destinationPosition;
+
+        a.y = 0;
+        b.y = 0;
+
+        distanceToDestination = Vector3.Distance(a, b);
+    }
+
+    private void SetWalk(bool flag)
+    {
+        _animator?.SetBool("IsWalking", flag);
+    }
 
 }
