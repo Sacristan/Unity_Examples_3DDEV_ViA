@@ -29,4 +29,5 @@ public class UI_ObjectSelection : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         transform.Rotate(Vector3.up * 45);
     }
+
 }

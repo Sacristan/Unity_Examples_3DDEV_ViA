@@ -13,6 +13,6 @@ public class FPSCounter : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(Screen.width - 100, 0, 100, 50), fps.ToString("n2"));    
+        GUI.Label(new Rect(Screen.width - 50, 0, 100, 50), fps.ToString("n2"));    
     }
 }
