@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class RigidbodySimulationController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float force = 20f;
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void FixedUpdate()
     {
-        
+        foreach (var r in GetComponentsInChildren<Rigidbody>())
+        {
+            r.AddForce(Vector3.up * force, ForceMode.Acceleration);
+        }
+
     }
 }
