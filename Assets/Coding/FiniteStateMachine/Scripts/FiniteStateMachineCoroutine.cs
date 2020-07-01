@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FiniteStateMachine : MonoBehaviour
+public class FiniteStateMachineCoroutine : MonoBehaviour
 {
     private enum State
     {
@@ -29,35 +29,35 @@ public class FiniteStateMachine : MonoBehaviour
         StartCoroutine(StateMachine());
     }
 
+    void UpdateState()
+    {
+        switch (currentState)
+        {
+            case State.Idle:
+                InitIdle();
+                break;
+            case State.Jumping:
+                InitJumping();
+                break;
+            case State.Dead:
+                InitDead();
+                break;
+        }
+    }
+
     private IEnumerator StateMachine()
     {
+        UpdateState();
+
         while (true)
         {
-            if (!stateMachineInitiated || lastState != currentState)
-            {
-
-                switch (currentState)
-                {
-                    case State.Idle:
-                        InitIdle();
-                        break;
-                    case State.Jumping:
-                        InitJumping();
-                        break;
-                    case State.Dead:
-                        InitDead();
-                        break;
-                }
-
-                stateMachineInitiated = true;
-            }
+            if (lastState != currentState) UpdateState();
 
             StateMachineUpdate();
 
             lastState = currentState;
             yield return null;
         }
-
     }
 
     private void InitIdle()

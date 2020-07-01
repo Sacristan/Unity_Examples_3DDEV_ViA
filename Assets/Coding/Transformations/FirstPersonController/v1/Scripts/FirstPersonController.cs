@@ -5,8 +5,7 @@ public class FirstPersonController : MonoBehaviour
     private const float PitchLimit = 89;
     private const float RotationSpeed = 100f;
 
-    [SerializeField]
-    private float movementSpeed = 25f;
+    [SerializeField] private float movementSpeed = 25f;
 
     [SerializeField]
     private float mouseSensitivity = 1.5f;
