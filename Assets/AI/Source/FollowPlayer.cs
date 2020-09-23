@@ -27,9 +27,6 @@ public class FollowPlayer : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Follows Player
-    /// </summary>
     private void PerformFollowPlayer()
     {
         Vector3 direction = _player.transform.position - transform.position; // get the direction from me to player
