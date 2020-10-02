@@ -1,0 +1,875 @@
+fileFormatVersion: 2
+guid: 32fa27db204e64246b3d882307faadb7
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: City_Infected_Man_Body1
+    second: {fileID: 2100000, guid: bcc179e5994e11a48a4fd816d212c38b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: City_Man_Infected_Outfit1
+    second: {fileID: 2100000, guid: e1765a9f110fbe94c9036a9ae151d37f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: defaultPolygonShader1
+    second: {fileID: 2100000, guid: 3eb6848a330f1f34482fa42146eb0169, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: CityDeadOutfit:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: CityDeadOutfit:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: InfectedCityMan(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bottom
+      parentName: InfectedCityMan(Clone)
+      position: {x: -0, y: -10.000999, z: 0}
+      rotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:Mesh1
+      parentName: InfectedCityMan(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root
+      parentName: InfectedCityMan(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:Hips
+      parentName: root
+      position: {x: -0.00016283523, y: 0.9178644, z: -0.0010167479}
+      rotation: {x: -1.4210857e-12, y: -2.842171e-12, z: -1.8836668e-11, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:Spine
+      parentName: CityDeadOutfit:Hips
+      position: {x: -0, y: 0.11427338, z: -0.014921163}
+      rotation: {x: -0.06487415, y: 1.6142586e-12, z: 1.898136e-11, w: 0.99789345}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: CityDeadOutfit:Spine1
+      parentName: CityDeadOutfit:Spine
+      position: {x: -0, y: 0.13445066, z: -0.0000000010217476}
+      rotation: {x: -0, y: -0, z: 4.135903e-25, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:Spine2
+      parentName: CityDeadOutfit:Spine1
+      position: {x: -0, y: 0.15365788, z: 4.876065e-10}
+      rotation: {x: -0, y: -0, z: 4.135903e-25, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:Neck
+      parentName: CityDeadOutfit:Spine2
+      position: {x: -0, y: 0.17286497, z: -0.0000000054663643}
+      rotation: {x: 0.06487415, y: -1.1194334e-18, z: 1.7218995e-17, w: 0.99789345}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:Head
+      parentName: CityDeadOutfit:Neck
+      position: {x: -0, y: 0.08897659, z: 0.040368795}
+      rotation: {x: -0, y: -5.856087e-20, z: 2.2738453e-19, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:HeadTop_End
+      parentName: CityDeadOutfit:Head
+      position: {x: -0, y: 0.20273635, z: 0.0919818}
+      rotation: {x: -2.7755576e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:RightShoulder
+      parentName: CityDeadOutfit:Spine2
+      position: {x: 0.0686146, y: 0.15407212, z: -0.0024628819}
+      rotation: {x: -0.55093807, y: -0.43791276, z: 0.5708102, w: -0.42293662}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: CityDeadOutfit:RightArm
+      parentName: CityDeadOutfit:RightShoulder
+      position: {x: -2.252025e-10, y: 0.14430438, z: -0.0000000016657233}
+      rotation: {x: -0.09617235, y: 0.0017989874, z: -0.0072190166, w: 0.9953369}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000001}
+    - name: CityDeadOutfit:RightForeArm
+      parentName: CityDeadOutfit:RightArm
+      position: {x: -1.9003055e-10, y: 0.27826595, z: 3.7967537e-10}
+      rotation: {x: 0.032631423, y: 0.0017196834, z: -0.052601647, w: -0.99808085}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: CityDeadOutfit:RightHand
+      parentName: CityDeadOutfit:RightForeArm
+      position: {x: 8.683091e-11, y: 0.23325136, z: -2.0511577e-10}
+      rotation: {x: -0.0641251, y: 0.008710136, z: 0.034182195, w: -0.99731827}
+      scale: {x: 1.0000001, y: 1, z: 1.0000004}
+    - name: CityDeadOutfit:RightHandMiddle1
+      parentName: CityDeadOutfit:RightHand
+      position: {x: -0.009785837, y: 0.12334229, z: -0.0004698914}
+      rotation: {x: 0.035007574, y: 0.00025448666, z: -0.0072644395, w: -0.9993607}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: CityDeadOutfit:RightHandMiddle2
+      parentName: CityDeadOutfit:RightHandMiddle1
+      position: {x: -0.00006568636, y: 0.036551323, z: 1.9235358e-10}
+      rotation: {x: -0.041073095, y: -0.000013023463, z: -0.00054741383, w: -0.99915594}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000001}
+    - name: CityDeadOutfit:RightHandMiddle3
+      parentName: CityDeadOutfit:RightHandMiddle2
+      position: {x: 0.00017340438, y: 0.033816177, z: -1.202983e-10}
+      rotation: {x: 0.040431507, y: 0.000015875063, z: 0.0015055869, w: -0.99918115}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: CityDeadOutfit:RightHandMiddle4
+      parentName: CityDeadOutfit:RightHandMiddle3
+      position: {x: -0.000107718, y: 0.02976661, z: 6.367287e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:RightHandPinky1
+      parentName: CityDeadOutfit:RightHand
+      position: {x: 0.033299334, y: 0.11079947, z: 0.002948602}
+      rotation: {x: 0.029253967, y: 0.0006825393, z: -0.02332609, w: -0.99929965}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: CityDeadOutfit:RightHandPinky2
+      parentName: CityDeadOutfit:RightHandPinky1
+      position: {x: -0.00003999477, y: 0.03418673, z: 3.2142167e-10}
+      rotation: {x: -0.004865713, y: -0.00000016286502, z: -0.00000007024209, w: 0.9999882}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: CityDeadOutfit:RightHandPinky3
+      parentName: CityDeadOutfit:RightHandPinky2
+      position: {x: -0.00005477099, y: 0.028664857, z: 1.0061143e-10}
+      rotation: {x: 0.040615715, y: -0.00000019986456, z: 0.00000009941566, w: 0.9991749}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: CityDeadOutfit:RightHandPinky4
+      parentName: CityDeadOutfit:RightHandPinky3
+      position: {x: 0.0000947657, y: 0.024489876, z: 4.2475762e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:RightHandThumb1
+      parentName: CityDeadOutfit:RightHand
+      position: {x: -0.029242126, y: 0.041512452, z: 0.017574243}
+      rotation: {x: -0.10981743, y: -0.015397065, z: -0.32759604, w: -0.9382878}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: CityDeadOutfit:RightHandThumb2
+      parentName: CityDeadOutfit:RightHandThumb1
+      position: {x: -0.0028703248, y: 0.0428905, z: -6.1051254e-11}
+      rotation: {x: 0.014280665, y: -0.000046775658, z: 0.023962235, w: 0.99961084}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: CityDeadOutfit:RightHandThumb3
+      parentName: CityDeadOutfit:RightHandThumb2
+      position: {x: 0.0022797398, y: 0.040261686, z: 9.541864e-10}
+      rotation: {x: -0.023847405, y: 7.6321516e-10, z: -0.00000003180355, w: 0.9997156}
+      scale: {x: 0.9999999, y: 0.99999964, z: 0.9999995}
+    - name: CityDeadOutfit:RightHandThumb4
+      parentName: CityDeadOutfit:RightHandThumb3
+      position: {x: 0.0005905753, y: 0.033229776, z: -0.0000000014885025}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:RightHandRing1
+      parentName: CityDeadOutfit:RightHand
+      position: {x: 0.010881537, y: 0.123245105, z: -0.00085973745}
+      rotation: {x: 0.02646323, y: 0.00011840463, z: -0.0044853175, w: -0.9996398}
+      scale: {x: 1.0000004, y: 1, z: 1.0000002}
+    - name: CityDeadOutfit:RightHandRing2
+      parentName: CityDeadOutfit:RightHandRing1
+      position: {x: -0.00000029098663, y: 0.033849087, z: -2.1145438e-10}
+      rotation: {x: 0.006531485, y: -0.00000014226677, z: -0.000000074528295, w: 0.99997866}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: CityDeadOutfit:RightHandRing3
+      parentName: CityDeadOutfit:RightHandRing2
+      position: {x: 0.000028623268, y: 0.03152832, z: -2.0067972e-10}
+      rotation: {x: -0.013161286, y: 0.000000082635445, z: 0.00000005858857, w: 0.99991345}
+      scale: {x: 1.0000002, y: 0.99999976, z: 1.0000002}
+    - name: CityDeadOutfit:RightHandRing4
+      parentName: CityDeadOutfit:RightHandRing3
+      position: {x: -0.000028332246, y: 0.027442629, z: 8.974098e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:RightHandIndex1
+      parentName: CityDeadOutfit:RightHand
+      position: {x: -0.03439503, y: 0.11805221, z: 0.0022902908}
+      rotation: {x: -0.00673402, y: 0.00014005041, z: -0.020729583, w: 0.9997625}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
+    - name: CityDeadOutfit:RightHandIndex2
+      parentName: CityDeadOutfit:RightHandIndex1
+      position: {x: -0.00017941938, y: 0.03390644, z: -2.225306e-11}
+      rotation: {x: 0.041421015, y: -0.0000003768946, z: -0.00000006093751, w: 0.9991419}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+    - name: CityDeadOutfit:RightHandIndex3
+      parentName: CityDeadOutfit:RightHandIndex2
+      position: {x: 0.00004872443, y: 0.031830996, z: -1.4897267e-10}
+      rotation: {x: 0.0155380815, y: -0.000000037796372, z: -0.00000006325889, w: 0.9998793}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999976}
+    - name: CityDeadOutfit:RightHandIndex4
+      parentName: CityDeadOutfit:RightHandIndex3
+      position: {x: 0.00013069467, y: 0.027553473, z: 7.970655e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:LeftShoulder
+      parentName: CityDeadOutfit:Spine2
+      position: {x: -0.0686146, y: 0.1540698, z: -0.0024451604}
+      rotation: {x: 0.5510185, y: -0.4378496, z: 0.5707472, w: 0.4229824}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1.0000001}
+    - name: CityDeadOutfit:LeftArm
+      parentName: CityDeadOutfit:LeftShoulder
+      position: {x: 2.2488741e-10, y: 0.14430438, z: -0.000000001665766}
+      rotation: {x: -0.095329374, y: -0.0011808126, z: 0.0009968578, w: 0.9954446}
+      scale: {x: 1.0000001, y: 1, z: 0.9999999}
+    - name: CityDeadOutfit:LeftForeArm
+      parentName: CityDeadOutfit:LeftArm
+      position: {x: -1.2633226e-10, y: 0.27811396, z: 0.0000000013136886}
+      rotation: {x: -0.033011068, y: 0.0016168501, z: -0.04888627, w: 0.99825734}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000004}
+    - name: CityDeadOutfit:LeftHand
+      parentName: CityDeadOutfit:LeftForeArm
+      position: {x: 2.459147e-10, y: 0.23330992, z: -1.3178379e-10}
+      rotation: {x: 0.03279383, y: 0.0010581667, z: 0.034136847, w: 0.9988785}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: CityDeadOutfit:LeftHandPinky1
+      parentName: CityDeadOutfit:LeftHand
+      position: {x: -0.03299165, y: 0.10825066, z: 0.0016500865}
+      rotation: {x: -0.0066695353, y: 0.00005668716, z: -0.008473395, w: 0.99994195}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: CityDeadOutfit:LeftHandPinky2
+      parentName: CityDeadOutfit:LeftHandPinky1
+      position: {x: 0.00005528674, y: 0.03615328, z: 5.1326565e-10}
+      rotation: {x: 0.0024021745, y: -0.00000013623138, z: -0.000000035192524, w: 0.9999972}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: CityDeadOutfit:LeftHandPinky3
+      parentName: CityDeadOutfit:LeftHandPinky2
+      position: {x: 0.00003642597, y: 0.028377848, z: -2.979155e-10}
+      rotation: {x: 0.04119367, y: -0.000007494516, z: -0.00032472343, w: 0.9991512}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: CityDeadOutfit:LeftHandPinky4
+      parentName: CityDeadOutfit:LeftHandPinky3
+      position: {x: -0.00009171286, y: 0.024365684, z: 3.824573e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:LeftHandRing1
+      parentName: CityDeadOutfit:LeftHand
+      position: {x: -0.0110919215, y: 0.12200436, z: -0.0008365789}
+      rotation: {x: -0.015236282, y: 0.00013687079, z: -0.008956887, w: 0.99984384}
+      scale: {x: 1.0000004, y: 0.9999999, z: 1.0000001}
+    - name: CityDeadOutfit:LeftHandRing2
+      parentName: CityDeadOutfit:LeftHandRing1
+      position: {x: 0.00014083706, y: 0.03423026, z: 6.446044e-13}
+      rotation: {x: 0.031426333, y: -0.00000008477946, z: -0.00000003382388, w: 0.9995061}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: CityDeadOutfit:LeftHandRing3
+      parentName: CityDeadOutfit:LeftHandRing2
+      position: {x: 0.000025147605, y: 0.031874675, z: -2.1625225e-10}
+      rotation: {x: 0.040221393, y: -0.00007361311, z: -0.0014093707, w: 0.99918985}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: CityDeadOutfit:LeftHandRing4
+      parentName: CityDeadOutfit:LeftHandRing3
+      position: {x: -0.00016598473, y: 0.026420997, z: 6.367105e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:LeftHandThumb1
+      parentName: CityDeadOutfit:LeftHand
+      position: {x: 0.030356186, y: 0.04043186, z: 0.01546486}
+      rotation: {x: 0.10434564, y: -0.018391855, z: -0.32336935, w: 0.9403223}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
+    - name: CityDeadOutfit:LeftHandThumb2
+      parentName: CityDeadOutfit:LeftHandThumb1
+      position: {x: 0.0033966713, y: 0.042160567, z: -9.359238e-10}
+      rotation: {x: 0.025530662, y: 0.00036978713, z: -0.040258322, w: 0.998863}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1.0000002}
+    - name: CityDeadOutfit:LeftHandThumb3
+      parentName: CityDeadOutfit:LeftHandThumb2
+      position: {x: -0.00234515, y: 0.03956616, z: -7.031278e-10}
+      rotation: {x: -0.03975436, y: 0.00038262905, z: 0.0022571299, w: 0.9992069}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: CityDeadOutfit:LeftHandThumb4
+      parentName: CityDeadOutfit:LeftHandThumb3
+      position: {x: -0.0010515247, y: 0.031790968, z: 3.2232775e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:LeftHandMiddle1
+      parentName: CityDeadOutfit:LeftHand
+      position: {x: 0.009968725, y: 0.11660605, z: -0.000027734855}
+      rotation: {x: -0.036053766, y: 0.0007932001, z: -0.021982202, w: 0.99910784}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: CityDeadOutfit:LeftHandMiddle2
+      parentName: CityDeadOutfit:LeftHandMiddle1
+      position: {x: 0.00020362996, y: 0.037253324, z: 6.504052e-11}
+      rotation: {x: 0.039853115, y: 0.000056387427, z: -0.0017789056, w: 0.999204}
+      scale: {x: 1, y: 1.0000002, z: 1}
+    - name: CityDeadOutfit:LeftHandMiddle3
+      parentName: CityDeadOutfit:LeftHandMiddle2
+      position: {x: -0.00007925197, y: 0.035856497, z: -1.2861676e-11}
+      rotation: {x: 0.017357733, y: -0.0000001539358, z: 0.00000006024404, w: 0.9998494}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
+    - name: CityDeadOutfit:LeftHandMiddle4
+      parentName: CityDeadOutfit:LeftHandMiddle3
+      position: {x: -0.0001243782, y: 0.03108313, z: -4.376804e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:LeftHandIndex1
+      parentName: CityDeadOutfit:LeftHand
+      position: {x: 0.034114853, y: 0.11661082, z: 0.0010750634}
+      rotation: {x: 0.012880882, y: -0.000011896018, z: -0.00093656365, w: 0.9999166}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.9999999}
+    - name: CityDeadOutfit:LeftHandIndex2
+      parentName: CityDeadOutfit:LeftHandIndex1
+      position: {x: 0.00007693295, y: 0.034980994, z: 1.4573799e-11}
+      rotation: {x: 0.040746335, y: -0.000013774123, z: -0.0008506968, w: 0.9991692}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: CityDeadOutfit:LeftHandIndex3
+      parentName: CityDeadOutfit:LeftHandIndex2
+      position: {x: -0.00012758042, y: 0.032172605, z: -1.13009546e-10}
+      rotation: {x: -0.040867038, y: 0.000014178369, z: 0.0006991888, w: 0.99916434}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: CityDeadOutfit:LeftHandIndex4
+      parentName: CityDeadOutfit:LeftHandIndex3
+      position: {x: 0.00005064747, y: 0.027690565, z: 1.4455537e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:RightUpLeg
+      parentName: CityDeadOutfit:Hips
+      position: {x: 0.09251375, y: -0.06351624, z: -0.0010692024}
+      rotation: {x: -0.0001349016, y: -0.06433766, z: 0.997926, w: -0.0020924313}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: CityDeadOutfit:RightLeg
+      parentName: CityDeadOutfit:RightUpLeg
+      position: {x: -4.5397106e-12, y: 0.40084437, z: 0.0000000034365872}
+      rotation: {x: 0.0543379, y: -0.0009538373, z: -0.01752528, w: 0.9983684}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000001}
+    - name: CityDeadOutfit:RightFoot
+      parentName: CityDeadOutfit:RightLeg
+      position: {x: 5.10598e-10, y: 0.35633543, z: -4.3330994e-10}
+      rotation: {x: 0.4757435, y: -0.043983817, z: 0.023828214, w: 0.87816054}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+    - name: CityDeadOutfit:RightToeBase
+      parentName: CityDeadOutfit:RightFoot
+      position: {x: -3.382793e-10, y: 0.15365706, z: 0.0000000023799922}
+      rotation: {x: 0.30860227, y: 0.038029883, z: -0.012349294, w: 0.95035034}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999999}
+    - name: CityDeadOutfit:RightToe_End
+      parentName: CityDeadOutfit:RightToeBase
+      position: {x: 1.5400095e-10, y: 0.06298977, z: 6.9185833e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CityDeadOutfit:LeftUpLeg
+      parentName: CityDeadOutfit:Hips
+      position: {x: -0.09251375, y: -0.06351624, z: 0.0012018108}
+      rotation: {x: 0.00013915246, y: -0.0664009, z: 0.9977909, w: 0.0020910099}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.99999994}
+    - name: CityDeadOutfit:LeftLeg
+      parentName: CityDeadOutfit:LeftUpLeg
+      position: {x: 1.0117501e-10, y: 0.40106258, z: -5.2427857e-10}
+      rotation: {x: 0.05944153, y: 0.0010445453, z: 0.017538693, w: 0.9980772}
+      scale: {x: 0.99999964, y: 0.9999997, z: 1}
+    - name: CityDeadOutfit:LeftFoot
+      parentName: CityDeadOutfit:LeftLeg
+      position: {x: -5.4130983e-10, y: 0.35629874, z: -3.7573233e-10}
+      rotation: {x: 0.47917828, y: 0.04267655, z: -0.02333455, w: 0.8763688}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1}
+    - name: CityDeadOutfit:LeftToeBase
+      parentName: CityDeadOutfit:LeftFoot
+      position: {x: -8.6243357e-10, y: 0.1568543, z: 0.0000000020100512}
+      rotation: {x: 0.30177072, y: -0.037499588, z: 0.011879756, w: 0.95256865}
+      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+    - name: CityDeadOutfit:LeftToe_End
+      parentName: CityDeadOutfit:LeftToeBase
+      position: {x: 2.943496e-11, y: 0.06402912, z: 2.5987015e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
