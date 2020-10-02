@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class AnimateBlendShape : MonoBehaviour
 {
-    float animationSpeed = 100f;
-
+    [SerializeField] float animationSpeed = 100f;
     SkinnedMeshRenderer _skinnedMeshRenderer;
 
     private void Start()
