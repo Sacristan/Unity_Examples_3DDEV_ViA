@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollisionTest : MonoBehaviour {
+public class CollisionTest : MonoBehaviour
+{
     void OnCollisionEnter(Collision collision)
     {
-        print("Just collided with "+collision.collider.gameObject.name);
+        print("Just collided with " + collision.collider.gameObject.name);
     }
-
+    
     void OnTriggerEnter(Collider collider)
     {
         GameObject colliderGameObject = collider.gameObject;
