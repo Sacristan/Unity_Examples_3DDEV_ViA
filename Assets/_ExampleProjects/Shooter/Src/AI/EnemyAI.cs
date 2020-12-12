@@ -32,11 +32,6 @@ public class EnemyAI : MonoBehaviour, IDamageable
     private int health;
     private float lastHitTime;
 
-    private void Awake()
-    {
-        Debug.Log("CALLED AWAKE");
-    }
-
     private void Start()
     {
         health = maxHealth;
