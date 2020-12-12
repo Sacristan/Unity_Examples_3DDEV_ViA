@@ -1,4 +1,5 @@
-﻿public interface IDamageable{
-	void ApplyDamage(int damage);
-	void Die();
+﻿public interface IDamageable
+{
+    void ApplyDamage(int damage);
+    void Die();
 }

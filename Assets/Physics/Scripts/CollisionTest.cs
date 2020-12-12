@@ -14,4 +14,5 @@ public class CollisionTest : MonoBehaviour
         print("Just triggered destroy in 3 seconds for " + colliderGameObject.name);
         Destroy(colliderGameObject, 3);
     }
+
 }

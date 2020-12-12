@@ -50,6 +50,13 @@ public class ShooterGameManager : MonoBehaviour
 
     }
 
+    enum GameState
+    {
+        Action,
+        End
+    }
+
+
     public delegate void EventHandler();
     public delegate void PlayerDamageEventHandler(int health);
     public static event EventHandler OnPlayerDied;
@@ -60,6 +67,8 @@ public class ShooterGameManager : MonoBehaviour
     private GameObject _player;
 
     [SerializeField] private EnemySpawner[] enemySpawners;
+
+    GameState gameState = GameState.Action;
 
     public static GameObject Player
     {
@@ -107,6 +116,8 @@ public class ShooterGameManager : MonoBehaviour
 
     public static void EnemyDied(EnemyAI enemyDied)
     {
+        if (instance.gameState == GameState.End) return;
+
         for (int i = 0; i < instance.enemySpawners.Length; i++)
         {
             EnemySpawner enemySpawner = instance.enemySpawners[i];
@@ -135,8 +146,16 @@ public class ShooterGameManager : MonoBehaviour
 
     public static void PlayerDied()
     {
+        instance.gameState = GameState.End;
+
         if (OnPlayerDied != null)
             OnPlayerDied.Invoke();
-    }
 
+        EnemyAI[] enemies = FindObjectsOfType<EnemyAI>();
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i]?.Die();
+        }
+    }
 }
