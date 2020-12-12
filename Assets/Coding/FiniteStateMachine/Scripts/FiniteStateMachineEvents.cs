@@ -13,8 +13,6 @@ public class FiniteStateMachineEvents : MonoBehaviour
     }
 
     private State currentState = State.None;
-    private State lastState;
-
     private bool stateMachineInitiated = false;
 
     private Renderer _renderer;
