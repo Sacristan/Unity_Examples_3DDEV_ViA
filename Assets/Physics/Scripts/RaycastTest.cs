@@ -14,12 +14,12 @@ public class RaycastTest : MonoBehaviour
         if (Physics.Raycast(originPoint, rayDirectionVector, out hit))
         {
             Debug.Log("There is an obstacle in front of me!");
-            Debug.DrawLine(originPoint, hit.point, Color.blue);
+            Debug.DrawLine(originPoint, hit.point, Color.red);
         }
         else
         {
             Debug.Log("There is no obstacle ahead of me!");
-            Debug.DrawRay(originPoint, rayDirectionVector, Color.red);
+            Debug.DrawRay(originPoint, rayDirectionVector, Color.green);
         }
     }
 }
