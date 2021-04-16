@@ -15,7 +15,7 @@ public class SoldierController : MonoBehaviour {
 
         yield return new WaitForSeconds(2f);
 
-        StartCoroutine(AttackPlayer());
+        // StartCoroutine(AttackPlayer());
     }
 
     private IEnumerator AttackPlayer()

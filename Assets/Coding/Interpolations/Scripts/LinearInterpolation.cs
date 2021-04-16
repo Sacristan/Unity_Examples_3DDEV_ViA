@@ -19,11 +19,12 @@ public class LinearInterpolation : MonoBehaviour
     {
         float t = 0f;
 
-        while (true)
+        while (t <= 1f)
         {
             t += Time.deltaTime / movementTimeInSeconds;
             transform.position = Vector3.Lerp(startTransform.position, endTransform.position, t);
             yield return null;
+
         }
     }
 

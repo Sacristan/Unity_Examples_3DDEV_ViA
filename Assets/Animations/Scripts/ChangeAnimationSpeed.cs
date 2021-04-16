@@ -7,7 +7,7 @@ public class ChangeAnimationSpeed : MonoBehaviour
 
     Animator _animator;
 
-    [SerializeField] float speed = 0.05f;
+    float speed = 0.1f;
 
     void Start()
     {
