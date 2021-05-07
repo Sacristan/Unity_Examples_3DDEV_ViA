@@ -85,37 +85,50 @@ public class PlayerDataProcessorBinaryWriter : IPlayerDataProcessor
 
     public void Save(PlayerData data)
     {
-        FileStream file = File.Create(SavePath);
-        BinaryWriter writer = new BinaryWriter(file, System.Text.Encoding.ASCII);
+        using (FileStream stream = File.Create(SavePath))
+        {
+            using (BinaryWriter writer = new BinaryWriter(stream, System.Text.Encoding.ASCII))
+            {
+                writer.Write(data.Name);
 
-        writer.Write(data.Name);
-        writer.Write(data.Position.x);
-        writer.Write(data.Position.y);
-        writer.Write(data.Position.z);
+                writer.Write(data.Position.x);
+                writer.Write(data.Position.y);
+                writer.Write(data.Position.z);
 
-        writer.Close();
-        file.Close();
+                writer.Write(data.Rotation.x);
+                writer.Write(data.Rotation.y);
+                writer.Write(data.Rotation.z);
+            }
+        }
+
+
+        // FileStream file = File.Create(SavePath);
+
+        // BinaryWriter writer = new BinaryWriter(file, System.Text.Encoding.ASCII);
+
+        // writer.Write(data.Name);
+        // writer.Write(data.Position.x);
+        // writer.Write(data.Position.y);
+        // writer.Write(data.Position.z);
+
+        // writer.Close();
+        // file.Close();
+
         Debug.Log("Saved file @ " + SavePath);
-
     }
 
     public PlayerData Load()
     {
+        PlayerData data = new PlayerData();
 
-        PlayerData data = null;
-
-        if (File.Exists(SavePath))
+        using (FileStream stream = File.Open(SavePath, FileMode.Open))
         {
-            FileStream file = File.Create(SavePath);
-            BinaryReader reader = new BinaryReader(file, System.Text.Encoding.ASCII);
-
-            data = new PlayerData();
-            data.Name = reader.ReadString();
-            data.Position = new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle());
-            data.Rotation = new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle());
-
-            reader.Close();
-            file.Close();
+            using (BinaryReader reader = new BinaryReader(stream, System.Text.Encoding.ASCII))
+            {
+                data.Name = reader.ReadString();
+                data.Position = new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle());
+                data.Rotation = new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle());
+            }
         }
 
         return data;
