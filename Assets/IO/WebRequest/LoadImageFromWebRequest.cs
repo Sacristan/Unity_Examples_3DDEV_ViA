@@ -23,5 +23,6 @@ public class LoadImageFromWebRequest : MonoBehaviour
         Sprite sprite = Sprite.Create(downloadedTexture, new Rect(0.0f, 0.0f, downloadedTexture.width, downloadedTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
 
         GetComponent<Image>().sprite = sprite;
+        downloadedTexture = null;
     }
 }
