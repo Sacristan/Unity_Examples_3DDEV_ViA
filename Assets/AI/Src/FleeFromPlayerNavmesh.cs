@@ -32,8 +32,10 @@ public class FleeFromPlayerNavmesh : MonoBehaviour
         Vector3 direction = transform.position - _player.transform.position;
         Vector3 targetFleePos = transform.position + direction;
 
-        NavMeshHit hit;
-        NavMesh.SamplePosition(targetFleePos, out hit, 1f, NavMesh.AllAreas);
+        if (NavMesh.SamplePosition(targetFleePos, out NavMeshHit hit, 1f, NavMesh.AllAreas))
+        {
+            targetFleePos = hit.position;
+        }
 
         _navMeshAgent.SetDestination(targetFleePos);
     }
