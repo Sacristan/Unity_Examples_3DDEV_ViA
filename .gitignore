@@ -4,6 +4,8 @@ App/
 [Bb]uild/
 UWP/
 [Oo]bj/
+UserSettings/
+Logs/
 
 .DS_Store
 *.csproj
