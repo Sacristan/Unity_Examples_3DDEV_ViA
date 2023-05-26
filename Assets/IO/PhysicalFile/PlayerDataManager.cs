@@ -3,12 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+#if UNITY_EDITOR
+[UnityEditor.CustomEditor(typeof(PlayerDataManager))]
+public class PlayerDataManagerEditor : UnityEditor.Editor
+{
+    PlayerDataManager t;
+
+    private void OnEnable()
+    {
+        this.t = target as PlayerDataManager;
+    }
+
+    public override void OnInspectorGUI()
+    {
+        base.DrawDefaultInspector();
+
+        GUILayout.Space(30);
+
+        if (GUILayout.Button("Save"))
+        {
+            this.t.Save();
+        }
+
+        if (GUILayout.Button("Load"))
+        {
+            this.t.Load();
+        }
+    }
+}
+#endif
+
 public class PlayerDataManager : MonoBehaviour
 {
     enum SaveSystem
     {
         JSONSerializer,
-        BinaryFormatter,
         BinaryWriterReader
     }
 
@@ -18,9 +47,8 @@ public class PlayerDataManager : MonoBehaviour
 
     [SerializeField] Text nameField;
 
-    [SerializeField] SaveSystem saveSystem = SaveSystem.BinaryFormatter;
+    [SerializeField] SaveSystem saveSystem = SaveSystem.JSONSerializer;
     IPlayerDataProcessor saveFileSystem = null;
-
 
     private void Start()
     {
@@ -29,9 +57,6 @@ public class PlayerDataManager : MonoBehaviour
 
         switch (saveSystem)
         {
-            case SaveSystem.BinaryFormatter:
-                saveFileSystem = new PlayerDataProcessorBinaryFormatter();
-                break;
             case SaveSystem.JSONSerializer:
                 saveFileSystem = new PlayerDataProcessorJSONSerializer();
                 break;
