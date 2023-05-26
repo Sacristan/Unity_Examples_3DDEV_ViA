@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 public class LoadImageFromWebRequest : MonoBehaviour
 {
+    const string ImageLink = "https://ftw.usatoday.com/wp-content/uploads/sites/90/2017/05/spongebob.jpg";
+
     private void Start()
     {
         StartCoroutine(FetchViaTexture());
@@ -12,7 +14,7 @@ public class LoadImageFromWebRequest : MonoBehaviour
 
     IEnumerator FetchViaTexture()
     {
-        UnityWebRequest www = UnityWebRequestTexture.GetTexture("https://pbs.twimg.com/profile_images/877787847247503360/DHVlmPfz.jpg");
+        UnityWebRequest www = UnityWebRequestTexture.GetTexture(ImageLink);
 
         Debug.Log("Downloading...");
         yield return www.SendWebRequest();
