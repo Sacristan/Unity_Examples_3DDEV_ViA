@@ -30,7 +30,11 @@ public class TorchController : MonoBehaviour
 
         AudioClip flashLightSFX = flashLightSounds[audioClipIndex];
 
-        if (flashLightSFX != null) _audioSource.PlayOneShot(flashLightSFX);
+        if (flashLightSFX != null)
+        {
+            _audioSource.pitch = Random.Range(0.8f, 1.2f);
+            _audioSource.PlayOneShot(flashLightSFX);
+        }
 
         flashLight.enabled = !flashLight.enabled;
     }
